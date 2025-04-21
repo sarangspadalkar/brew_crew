@@ -1,17 +1,16 @@
-import 'package:brew_crew/models/user.dart';
 import 'package:brew_crew/services/auth.dart';
-import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
+class RegisterUser extends StatefulWidget {
   final Function toggleView;
-  SignIn({super.key, required this.toggleView});
+
+  RegisterUser({super.key, required this.toggleView});
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<RegisterUser> createState() => _RegisterUserState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterUserState extends State<RegisterUser> {
   final AuthService _auth = AuthService();
 
   String email = "";
@@ -24,14 +23,14 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
-        title: Text("Sign in to Brew Crew"),
+        title: Text("Sign Up to Brew Crew"),
         actions: <Widget>[
           TextButton.icon(
             icon: Icon(Icons.person),
             onPressed: () {
               widget.toggleView();
             },
-            label: Text("Register"),
+            label: Text("Sign In"),
           ),
         ],
       ),
@@ -66,7 +65,7 @@ class _SignInState extends State<SignIn> {
                   backgroundColor: WidgetStateProperty.all<Color>(Colors.blue),
                 ),
                 onPressed: () async {},
-                child: Text("Sign In", style: TextStyle(color: Colors.white)),
+                child: Text("Register", style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
