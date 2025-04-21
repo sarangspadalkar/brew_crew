@@ -1,4 +1,4 @@
-package com.example.brew_crew
+package io.github.sarangspadalkar.brew_crew
 
 import io.flutter.embedding.android.FlutterActivity
 
