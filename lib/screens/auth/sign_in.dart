@@ -1,4 +1,6 @@
+import 'package:brew_crew/models/user.dart';
 import 'package:brew_crew/services/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -24,12 +26,12 @@ class _SignInState extends State<SignIn> {
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: ElevatedButton(
           onPressed: () async {
-            dynamic user = await _auth.signInAnonymously();
+            User? user = await _auth.signInAnonymously();
             if (user == null) {
               print('error sign in');
             } else {
               print('Sign success');
-              print(user);
+              print(user.uid);
             }
           },
           child: Text("Sign In anonymously"),
