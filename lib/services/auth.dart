@@ -23,6 +23,16 @@ class AuthService {
   }
 
   /** sign email password */
+  Future<User?> signInUser(String email, String password) async {
+    try {
+      firebase_auth.UserCredential result = await _auth
+          .signInWithEmailAndPassword(email: email, password: password);
+      return _userFromFirebaseUser(result.user);
+    } catch (e) {
+      print("Sign In User Error: ${e.toString()}");
+      return null;
+    }
+  }
 
   /** register email & password */
   Future<User?> registerUser(String email, String password) async {
