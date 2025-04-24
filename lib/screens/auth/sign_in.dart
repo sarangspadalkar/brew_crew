@@ -1,5 +1,6 @@
 import 'package:brew_crew/models/user.dart';
 import 'package:brew_crew/services/auth.dart';
+import 'package:brew_crew/shared/constants.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter/material.dart';
@@ -47,7 +48,7 @@ class _SignInState extends State<SignIn> {
               /**Email */
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: InputDecoration(hintText: 'email'),
+                decoration: textInputDecoration('email'),
                 validator:
                     (value) =>
                         value == null || !EmailValidator.validate(value)
@@ -62,7 +63,7 @@ class _SignInState extends State<SignIn> {
               /**Password */
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: InputDecoration(hintText: 'password'),
+                decoration: textInputDecoration('password'),
                 validator:
                     (value) =>
                         value == null || value == "" ? "Password empty" : null,
