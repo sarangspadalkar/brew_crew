@@ -47,6 +47,7 @@ class _SignInState extends State<SignIn> {
               /**Email */
               SizedBox(height: 20.0),
               TextFormField(
+                decoration: InputDecoration(hintText: 'email'),
                 validator:
                     (value) =>
                         value == null || !EmailValidator.validate(value)
@@ -61,6 +62,7 @@ class _SignInState extends State<SignIn> {
               /**Password */
               SizedBox(height: 20.0),
               TextFormField(
+                decoration: InputDecoration(hintText: 'password'),
                 validator:
                     (value) =>
                         value == null || value == "" ? "Password empty" : null,
